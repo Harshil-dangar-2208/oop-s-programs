@@ -1,0 +1,53 @@
+#include<iostream.h>
+#include<conio.h>
+class A
+{
+    int x;
+
+	public:
+		A()
+		{
+			x=20;
+		}
+		A change(A obja)
+    {
+
+	x=30;
+	return obja;
+    }
+	void disp()
+    {
+	cout<<this->x<<endl;
+    }
+class B
+{
+	int x;
+	public:
+
+		B()
+		{
+			x=1;
+		}
+		void input()
+	{
+	    this->x++;
+	}
+		void display()
+	{
+		cout<<this->x<<endl;
+	}
+};
+
+};
+void main()
+{
+	clrscr();
+	A obja;
+	A::B objb;
+	obja.disp();
+	obja.change(obja);
+	objb.display();
+	obja.disp();
+
+	getch();
+}
