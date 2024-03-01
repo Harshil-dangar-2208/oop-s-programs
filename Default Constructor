@@ -1,0 +1,36 @@
+#include<iostream.h>
+#include<conio.h>
+class Dept
+{
+    int dept_id;
+    char dept_name[10];
+
+public:
+    Dept();
+    void display();
+};
+
+Dept:: Dept()
+{
+	cout<<"dept id:";
+	cin>>dept_id;
+
+	cout<<"dept name:";
+	cin>>dept_name;
+
+}
+ void Dept::display()
+    {
+	cout<<"---Dept Details:---\n";
+	cout<<"dept ID"<<"\t\t"<<"dept Name\n";
+	cout<<dept_id<<"\t\t"<<dept_name<<endl;
+    }
+void main()
+{
+	clrscr();
+    Dept d;
+    d.display();
+
+    getch();
+}
+
