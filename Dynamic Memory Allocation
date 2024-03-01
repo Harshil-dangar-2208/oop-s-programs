@@ -1,0 +1,32 @@
+#include <iostream.h>
+#include <conio.h>
+#include <string.h>
+class Person
+{
+	private:
+		char person_name[50];
+		int person_age;
+	public:
+		Person(const char* name, int age)
+	{
+		strcpy(person_name, name);
+		person_age = age;
+	}
+
+    void displayInfo() const
+    {
+	cout << "Name: " << person_name;
+	cout << " " << "\n Age: " << person_age << endl;
+    }
+};
+
+void main()
+{
+	clrscr();
+	    Person* person = new Person("Harshil", 22);
+	    person->displayInfo();
+	    delete person;
+
+
+	getch();
+}
