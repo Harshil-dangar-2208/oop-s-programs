@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+// Define a structure to represent an item in the shopping list
+struct Item {
+    char code_no[20];
+    float price;
+};
+
+// Define a structure for the shopping list
+struct ShoppingList {
+    struct Item items[100]; // Assuming a maximum of 100 items
+    int count;
+};
+
+// Function to add an item to the shopping list
+void add_item(struct ShoppingList *list, char code_no[], float price) {
+    strcpy(list->items[list->count].code_no, code_no);
+    list->items[list->count].price = price;
+    list->count++;
+    printf("Item added to the list.\n");
+}
+
+// Function to delete an item from the shopping list
+void delete_item(struct ShoppingList *list, char code_no[]) {
+    int i, found = 0;
+    for (i = 0; i < list->count; i++) {
+        if (strcmp(list->items[i].code_no, code_no) == 0) {
+            found = 1;
+            break;
+        }
+    }
+    if (found) {
+        for (; i < list->count - 1; i++) {
+            strcpy(list->items[i].code_no, list->items[i + 1].code_no);
+            list->items[i].price = list->items[i + 1].price;
+        }
+        list->count--;
+        printf("Item with code %s deleted from the list.\n", code_no);
+    } else {
+        printf("Item with code %s not found in the list.\n", code_no);
+    }
+}
+
+// Function to print the total value of the order
+void print_total_order_value(struct ShoppingList *list) {
+    float total = 0;
+    for (int i = 0; i < list->count; i++) {
+        total += list->items[i].price;
+    }
+    printf("Total value of the order is: $%.2f\n", total);
+}
+
+// Main function
+void main() {
+    struct ShoppingList shopping_list;
+    shopping_list.count = 0;
+    int choice;
+    char code_no[20];
+    float price;
+
+    while (1) {
+        clrscr();
+        printf("\n1. Add item to the list\n");
+        printf("2. Delete item from the list\n");
+        printf("3. Print total order value\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter item code: ");
+                scanf("%s", code_no);
+                printf("Enter item price: ");
+                scanf("%f", &price);
+                add_item(&shopping_list, code_no, price);
+                break;
+            case 2:
+                printf("Enter item code to delete: ");
+                scanf("%s", code_no);
+                delete_item(&shopping_list, code_no);
+                break;
+            case 3:
+                print_total_order_value(&shopping_list);
+                break;
+            case 4:
+                printf("Exiting...\n");
+                getch(); // Wait for a key press before exiting
+                return;
+            default:
+                printf("Invalid choice. Please enter a valid option.\n");
+        }
+
+        printf("Press any key to continue...");
+        getch(); // Wait for a key press before continuing
+    }
+}
