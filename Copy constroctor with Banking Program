@@ -1,0 +1,96 @@
+#include<iostream.h>
+#include<stdio.h>
+#include<conio.h>
+#include<time.h>
+#include<string.h>
+
+//using namespace std;
+
+class bank
+{
+    int accno;
+    char nm[100], acctype[100];
+    float bal;
+
+public:
+    // Parameterized Constructor
+    bank(int acc_no, char *name, char *acc_type, float balance)
+    {
+	accno = acc_no;
+	strcpy(nm, name);
+	strcpy(acctype, acc_type);
+	bal = balance;
+    }
+
+    // Copy Constructor
+    bank(const bank &source)
+    {
+	accno = source.accno;
+	strcpy(nm, source.nm);
+	strcpy(acctype, source.acctype);
+	bal = source.bal;
+    }
+
+    void deposit();
+    void withdraw();
+    void display();
+};
+
+void bank::deposit()
+{
+    int damt1;
+    cout << "\n Enter Deposit Amount = ";
+    cin >> damt1;
+    bal += damt1;
+}
+
+void bank::withdraw()
+{
+    int wamt1;
+    cout << "\n Enter Withdraw Amount = ";
+    cin >> wamt1;
+    if (wamt1 > bal)
+	cout << "\n Cannot Withdraw Amount";
+    bal -= wamt1;
+}
+
+void bank::display()
+{
+    cout << "\n ----------------------";
+    cout << "\n Account No. : " << accno;
+    cout << "\n Name : " << nm;
+    cout << "\n Account Type : " << acctype;
+    cout << "\n Balance : " << bal;
+}
+
+void main()
+{
+    clrscr();
+    int acc_no;
+    char name[100], acc_type[100];
+    float balance;
+
+    cout << "\n Enter Details: \n";
+    cout << "-----------------------";
+    cout << "\n Account No. ";
+    cin >> acc_no;
+    cout << "\n Name : ";
+    cin >> name;
+    cout << "\n Account Type : ";
+    cin >> acc_type;
+    cout << "\n Balance : ";
+    cin >> balance;
+
+    bank b1(acc_no, name, acc_type, balance); // Object created using parameterized constructor
+    bank b2 = b1;                             // Object created using copy constructor
+
+    b1.deposit();
+    b1.withdraw();
+    b1.display();
+
+    cout << "\n\nDetails of Copied Object:\n";
+    b2.display();
+
+
+    getch();
+}
