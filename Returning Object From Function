@@ -1,0 +1,34 @@
+#include <iostream.h>
+#include <conio.h>
+#include<string.h>
+class Student
+{
+    public:
+    int studId;
+    int studAge;
+    char* studName;
+
+
+    Student input(int tempstudId, int tempstudAge,char* tempstudName) {
+	Student obj;
+	obj.studId = tempstudId;
+	obj.studAge = tempstudAge;
+	obj.studName = tempstudName;
+	return obj;
+    }
+    // In this function we pass object as an argument to display function
+    void display(Student obj) {
+
+       cout << "Student Id  : = " << obj.studId << endl;
+       cout << "Student Name: = " << obj.studName << endl;
+       cout << "Student Age : = " << obj.studAge << endl;
+    }
+};
+void main()
+{
+	clrscr();
+    Student studobj;
+    studobj = studobj.input (1221, 18, "Harshil");
+    studobj.display(studobj);
+    getch();
+}
