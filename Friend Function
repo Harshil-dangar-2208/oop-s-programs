@@ -1,0 +1,39 @@
+#include<iostream.h>
+#include<conio.h>
+class Base;
+class Height
+{
+	int num1;
+	public:
+		void setvalue(int x)
+	       {
+			num1=x;
+	       }
+	       friend void operation(Base,Height);
+};
+class Base
+{
+	int num2;
+	public:
+		void getvalue(int y)
+		{
+			num2=y;
+		}
+		friend void operation(Base,Height);
+};
+void operation(Base b,Height h)
+{
+	cout<<"addition:"<<b.num2+h.num1;
+}
+void main()
+{
+	clrscr();
+	Base base_obj;
+	Height height_obj;
+
+		base_obj.getvalue(123);
+		height_obj.setvalue(456);
+		operation(base_obj,height_obj);
+
+	getch();
+}
