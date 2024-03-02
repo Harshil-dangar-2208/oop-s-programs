@@ -1,0 +1,32 @@
+#include <iostream.h>
+#include<conio.h>
+#include <string.h>
+class Employee {
+private:
+    int id;
+    char* name;
+
+public:
+    Employee(int id, const char* name) {
+        this->id = id;
+        this->name = new char[strlen(name) ];
+	strcpy(this->name, name);
+    }
+
+
+
+    void print() {
+	cout << "ID: " << id << " Name: " << name << "\n";
+    }
+};
+
+void main()
+{
+	clrscr();
+    Employee* e = new Employee(1221, "Harshil Dangar");
+    e->print();
+
+    e->print();
+
+    getch();
+}
