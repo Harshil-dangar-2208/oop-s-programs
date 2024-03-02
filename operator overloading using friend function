@@ -1,0 +1,51 @@
+// operator overloading using friend function in increment
+#include<iostream.h>
+#include<conio.h>
+class Test
+{
+	int a,b,c;
+
+	public:
+		Test()
+		{
+			a=b=c=0;
+		}
+		Test(int x,int y,int z)
+		{
+			a=x;
+			b=y;
+			c=z;
+		}
+		friend Test operator ++(Test &op1)
+		friend Test operator ++(Test &op1,int not_used);
+
+		void display();
+};
+Test operator ++ (Test &op1, int not_used)
+{
+	Test temp = op1;
+	op1.a++;
+	op1.b++;
+	op1.c++;
+	return temp;
+}
+void Test::display()
+{
+	cout<<a<<" , ";
+	cout<<b<<" , ";
+	cout<<c<<" , \n";
+}
+void main()
+{
+	clrscr();
+	Test a(21, 30, 8);
+	a.display();
+
+	++a;
+	a.display();
+
+	a++;
+	a.display();
+
+	getch();
+}
