@@ -1,0 +1,55 @@
+#include <iostream.h>
+#include <string.h>
+#include<conio.h>
+
+class Car
+{
+	private:
+		int modelNo;
+		char fuelType[10];
+		char carColor[10];
+		float carPrice;
+		int manufacturingYear;
+
+	public:
+    // Method to input car details
+		void inputDetails()
+    {
+		cout << "Enter Model No: ";
+		cin >> modelNo;
+		cout << "Enter Fuel Type: ";
+		cin >> fuelType;
+		cout << "Enter Car Color: ";
+		cin >> carColor;
+		cout << "Enter Car Price: ";
+		cin >> carPrice;
+		cout << "Enter Manufacturing Year: ";
+		cin >> manufacturingYear;
+    }
+
+    // Method to display car details
+	void displayDetails()
+    {
+		cout << "Model No: " << modelNo << endl;
+			cout << "Fuel Type: " << fuelType << endl;
+		cout << "Car Color: " << carColor << endl;
+		cout << "Car Price: " << carPrice << endl;
+		cout << "Manufacturing Year: " << manufacturingYear <<endl;
+    }
+};
+
+void main()
+{
+	clrscr();
+	Car myCar;
+
+	// Input car details
+	cout << "Enter Car Details:\n";
+	myCar.inputDetails();
+
+	// Display car details
+	cout << "\nCar Details:\n";
+	myCar.displayDetails();
+
+	getch();
+}
