@@ -1,0 +1,41 @@
+#include<iostream.h>
+#include<conio.h>
+class polygon
+{
+	protected:
+		int width,height;
+	public:
+		void set_values(int a,int b)
+		{
+			width=a;
+			height=b;
+		}
+};
+class rectangle:public polygon
+{
+	public:
+		int area()
+			{
+				return width*height;
+			}
+};
+class trangle:public polygon
+{
+	public:
+		int area()
+			{
+				return width*height;
+			}
+};
+void main()
+{
+	clrscr();
+
+	rectangle rect;
+	trangle trgl;
+	rect.set_values(2,3);
+	trgl.set_values(4,5);
+	cout<<rect.area()<<endl;
+	cout<<trgl.area()<<endl;
+	getch();
+}
