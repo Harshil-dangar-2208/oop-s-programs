@@ -1,0 +1,48 @@
+#include<iostream.h>
+#include<conio.h>
+class University;
+class Student
+{
+	private:
+		int student_rollno;
+		double student_marks;
+	protected:
+		char student_name[20];
+	public:
+		friend class University;
+		void get_details()
+		{
+			cout<<"student roll no:";
+			cin>>student_rollno;
+
+			cout<<"student name:";
+			cin>>student_name;
+
+			cout<<"student marks:";
+			cin>>student_marks;
+		}
+};
+class University
+{
+	public:
+		void get_stud_details(Student&stud)
+		{
+			cout<<"student roll no:"<<stud.student_rollno<<endl;
+
+			cout<<"student name:"<<stud.student_name<<endl;
+
+			cout<<"student marks:"<<stud.student_marks<<endl;
+		}
+};
+void main()
+{
+	clrscr();
+	University uni_obj;
+	Student stud_obj;
+	stud_obj.get_details();
+	cout<<"-----STUDENT DETIAILS:-----\n";
+	uni_obj.get_stud_details(stud_obj);
+
+
+	getch();
+}
