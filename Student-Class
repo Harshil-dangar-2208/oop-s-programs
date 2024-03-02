@@ -1,0 +1,52 @@
+#include<iostream.h>
+#include <string.h>
+#include<conio.h>
+
+class Student {
+public:
+    // Public data members
+    char name[10];
+    int age;
+    float marks;
+
+    // Public methods to set and display student details
+    void Sudentdetails()
+    {
+	cout<<"please enter student details:\n";
+
+	cout<<"student name:";
+	cin>>name;
+
+	cout<<"student age:";
+	cin>>age;
+
+	cout<<"student marks:";
+	cin>>marks;
+    }
+
+    void displayDetails() {
+	cout<<"----student details----\n"<<endl;
+	cout << "Name: " << name <<endl;
+	cout << "Age: " << age <<endl;
+	cout << "marks: " << marks<<endl;
+    }
+};
+
+void main() {
+clrscr();
+    // Create an object of the Student class
+    Student myStudent;
+
+    // Set student details
+    myStudent.Sudentdetails();
+
+    // Display student details
+    myStudent.displayDetails();
+
+    getch();
+}
+
+
+
+
+
