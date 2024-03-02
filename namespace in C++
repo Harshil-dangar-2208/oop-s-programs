@@ -1,0 +1,41 @@
+#include<iostream.h>
+#include<conio.h>
+class Employee
+{
+	int id;
+	char name[10];
+	double salary;
+	public:
+		void input_details()
+		{
+			cout<<"enter id:";
+			cin>>id;
+			cout<<"enter name:";
+			cin>>name;
+			cout<<"enter salary:";
+			cin>>salary;
+		}
+		void display()
+		{
+			cout<<id<<"\t"<<name<<"\t"<<salary<<endl;
+
+		}
+
+};
+int main()
+{
+	clrscr();
+	Employee e[2];
+	cout<<"enter employee details:"<<endl;
+	for(int i=0;i<2;i++)
+	{
+		e[i].input_details();
+	}
+	cout<<"employee details:"<<endl;
+	for( i=0;i<2;i++)
+	{
+		e[i].display();
+	}
+	getch();
+	return 0;
+}
