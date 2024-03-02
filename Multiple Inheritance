@@ -1,0 +1,46 @@
+//Multiple Inheritance using two base classess and 1 derived class
+#include<iostream.h>
+#include<conio.h>
+class Account
+{
+    int acc_no;
+public:
+    void acc_details()
+    {
+        acc_no=1111;
+	cout<<"Account no:"<<acc_no<<endl;
+    }
+    
+    
+};
+
+class Bank{
+public:
+    void bank_details()
+    {
+        cout<<"Bank Name:HDFC BANK PUNE"<<endl;
+        cout<<"Street Address:FC Road Pune"<<endl;
+    }
+        
+};
+class Faculty:public Account,public Bank
+{
+    int sal;
+public:
+    void salary()
+    {
+       sal=1000;
+        cout<<"Salary:"<<sal<<endl;
+    }
+};
+    
+void main()
+{
+    clrscr();
+    Faculty factObj;
+    factObj.acc_details();
+    factObj.salary();
+    factObj.bank_details();
+    
+	getch();
+}
