@@ -1,0 +1,66 @@
+#include <iostream.h>
+#include <conio.h>
+#include<string.h>
+class Student
+{
+	private:
+		char name[50];
+		int id;
+		char collegeName[50];
+
+	public:
+		Student(char* n, int i, char* c)
+	{
+		strcpy(name, n);
+		id=i;
+		strcpy(collegeName, c);
+	}
+
+	void display()
+	{
+		cout << "Name: " << name << ", ID: " << id << ", College: " << collegeName << endl;
+	}
+
+	void changeCollege(char* newCollege)
+	{
+		strcpy(collegeName, newCollege);
+	}
+
+	char* getCollegeName()
+	{
+		return collegeName;
+	}
+
+	int getID()
+	{
+		 return id;
+	}
+
+	char* getName()
+	{
+		return name;
+	}
+};
+
+void main()
+{
+	clrscr();
+
+	Student s1("harshil",1221, "JG College");
+	Student s2("Yash", 1232, "Mumbai University");
+
+	s1.display();
+	s2.display();
+
+	s1.changeCollege("DEF Institute");
+
+	cout <<"\nAfter changing college name for student 1:\n";
+
+	s1.display();
+
+	cout << "Student 1 college name: " << s1.getCollegeName() << endl;
+	cout << "Student 1 ID: " << s1.getID() << endl;
+	cout << "Student 1 name: " << s1.getName() << endl;
+
+   getch();
+}
