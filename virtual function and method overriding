@@ -1,0 +1,42 @@
+////virtual function and method overriding
+
+#include<iostream.h>
+#include<conio.h>
+class Animal
+{
+	public:
+		virtual void sound()
+	{
+		cout<<"The animal makes a sound"<<endl;
+	}
+};
+class Dog:public Animal
+{
+	public:
+		void sound()
+	{
+			cout<<"the dog barks"<<endl;
+	}
+};
+class Cat:public Animal
+{
+	public:
+		void sound()
+	{
+		cout<<"the cat meows"<<endl;
+	}
+};
+void main()
+{
+	clrscr();
+	Animal* animal1 = new Dog();
+	Animal* animal2 = new Cat();
+
+	animal1->sound();
+	animal2->sound();
+
+	delete animal1;
+	delete animal2;
+
+	getch();
+}
