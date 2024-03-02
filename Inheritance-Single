@@ -1,0 +1,33 @@
+#include<iostream.h>
+#include<conio.h>
+class Account//This is base class
+{
+public:
+    void display()
+    {
+	float salary=10000;
+	cout<<"Salary:"<<salary<<endl;
+    }
+};
+class Faculty:public Account
+{
+//Faculty is Derived class
+public:
+    void disp()
+    {
+	float bonous=2000;
+	cout<<"Bonous:"<<bonous<<endl;
+    }
+
+
+};
+void main()
+{
+	clrscr();
+	Faculty fobj;
+	cout<<"Salary Details:"<<endl;
+
+	fobj.Faculty::display();
+	fobj.disp();
+    getch();
+}
