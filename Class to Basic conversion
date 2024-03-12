@@ -1,0 +1,48 @@
+//CLASS TO BASIC CONVERSION
+
+#include<iostream.h>
+#include<conio.h>
+class Time
+{
+	int hrs,min;
+
+	public:
+		Time(int,int);
+		operator int();
+		int gethrs();
+		int getmins();
+};
+
+Time::Time(int t1,int t2)
+{
+	hrs=t1;
+	min=t2;
+}
+
+Time::operator int()
+{
+	return hrs * 60 + min;
+}
+
+int Time::gethrs()
+{
+	return hrs;
+}
+
+int Time::getmins()
+{
+	return min;
+}
+
+void main()
+{
+	clrscr();
+	Time t(3,40);
+	int duration;
+	duration = t;
+	cout<<"Hours: "<<t.gethrs()<<endl;
+	cout<<"Minute: " <<t.getmins()<<endl;
+	cout<<"Total minutes: " <<duration<<endl;
+
+	getch();
+}
