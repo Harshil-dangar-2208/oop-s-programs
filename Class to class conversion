@@ -1,0 +1,41 @@
+//class to class conversion
+
+#include<iostream.h>
+#include<conio.h>
+
+class student
+{
+	public:
+		int rollno;
+		student(int stud)
+		{
+			rollno=stud;
+		}
+};
+
+class university
+{
+	public:
+		int data;
+		university(student &tempvar)
+		{
+			data= tempvar.rollno;
+		}
+
+		vouid display()
+		{
+			cout<<"university data:"<<data;
+		}
+};
+
+void main()
+{
+	clrscr();
+	student obj_student(10);
+	university
+	obj_university=obj_student;
+	obj_university.display();
+
+	getch();
+}
+
