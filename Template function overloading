@@ -1,25 +1,30 @@
 //template function overloading
-#include <iostream>
-using namespace std;
+#include <iostream.h>
+#include <conio.h >
 // Function template for adding two integers
 template <typename T>
-T add(T a, T b) {
+T add(T a, T b) 
+{
     return a + b;
 }
 
 // Overloaded function template for adding two doubles
 template <>
-double add<double>(double a, double b) {
+double add<double>(double a, double b) 
+{
     return a + b;
 }
 
 // Overloaded function template for adding two strings
 template <>
-string add<string>(string a,string b) {
+string add<string>(string a,string b) 
+{
     return a + b;
 }
 
-int main() {
+void main() 
+{
+      clrscr();
     // Using the integer version of the add function
     int intResult = add<int>(5, 3);
     cout << "Integer addition: " << intResult <<endl;
@@ -32,5 +37,5 @@ int main() {
     string stringResult = add<string>("Hello, ", "World!");
     std::cout << "String concatenation: " << stringResult <<endl;
 
-    return 0;
+    getch();
 }
