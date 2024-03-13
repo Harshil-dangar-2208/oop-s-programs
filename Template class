@@ -1,9 +1,10 @@
 //template class example
-#include <iostream>
-using namespace std;
+#include <iostream.h>
+#include <conio.h>
 
 template <typename T>
-class MyClass {
+class MyClass 
+{
 private:
     T data; // Data member of type T
 
@@ -12,23 +13,29 @@ public:
     MyClass(T value) : data(value) {}
 
     // Method to set the value of data
-    void setData(T value) {
-        data = value;
-    }
+    void setData(T value) 
+{
+        data = value;  
+}
+
 
     // Method to get the value of data
-    T getData() const {
+    T getData() const 
+{
         return data;
-    }
+    
+}
 
     // Method to print the value of data
-    void printData() const {
+    void printData() const 
+{
         cout << "Data: " << data <<endl;
-    }
-};
-
-int main() {
     
+}
+};
+void main()
+ {
+    clrscr();
     MyClass intInstance(10);
     intInstance.printData();
     
@@ -37,5 +44,5 @@ int main() {
     MyClass stringInstance("Hello, World!");
     stringInstance.printData();
 
-    return 0;
+    getch();
 }
