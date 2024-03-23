@@ -1,32 +1,37 @@
 // file input and output
-
 #include <iostream.h>
 #include <fstream.h>
 #include <string.h>
 #include <conio.h>
-
-void main ()
- {
-    clrscr();
+void main()
+{
+	clrscr();
     // Create a text file
-    ofstream MyWriteFile("/Users/nileshtaware/Desktop/USERFUN/USERFUN/example.txt");
-    
+	ofstream MyWriteFile("harshil.txt");
+
     // Write to the file
-    MyWriteFile << "File handaling in c++";
-    
+	MyWriteFile << "File handling in C++";
+
     // Close the file
-    MyWriteFile.close();
-    
+	MyWriteFile.close();
+
     // Create a text string, which is used to output the text file
-    string myText;
-    
+	char myText[255];
+
     // Read from the text file
-    ifstream MyReadFile("/Users/nileshtaware/Desktop/USERFUN/USERFUN/example.txt");
-    
+	ifstream MyReadFile("harshil.txt");
+
     // Use a while loop together with the getline() function to read the file line by line
-    while (getline (MyReadFile, myText)) {
-        // Output the text from the file
-        cout << myText<<endl;
-    }
-    getch();
+	while (MyReadFile)
+	{
+		// Read the text from the file
+		MyReadFile.getline(myText, 255);
+
+		// Output the text from the file
+		cout << myText << endl;
+	}
+		MyReadFile.close();
+
+
+	getch();
 }
