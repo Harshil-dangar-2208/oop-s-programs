@@ -1,0 +1,81 @@
+//Append data in to file
+#include <iostream.h>
+#include <fstream.h>
+#include <string.h>
+#include <conio.h>
+
+// Function to create a file and write to it
+void createAndWriteFile(const char* filename, const char* content)
+{
+	ofstream file(filename);
+
+	if (file)
+	{
+		file << content;
+		file.close();
+		cout << "File created and written successfully.\n";
+	}
+	else
+	{
+		cout << "Unable to open file for writing.\n";
+	}
+}
+
+// Function to read from a file
+void readFile(const char* filename)
+{
+	ifstream file(filename);
+	char line[255];
+	if (file)
+	{
+		while (!file.eof())
+		{
+			file.getline(line, 255);
+			cout << line << '\n';
+		}
+		file.close();
+	}
+	else
+	{
+		cout << "Unable to open file for reading.\n";
+	}
+}
+
+// Function to append to a file
+void appendToFile(const char* filename, const char* content)
+{
+	ofstream file(filename, ios::app);
+	if (file)
+	{
+		file << content;
+		file.close();
+		cout << "Content appended successfully.\n";
+	}
+	else
+	{
+		cout << "Unable to open file for appending.\n";
+	}
+}
+
+void main()
+{
+	clrscr();
+	char filename[] = "example.txt";
+	char content[] = "Hello, World!";
+
+    // Create and write to a file
+	createAndWriteFile(filename, content);
+
+    // Read from the file
+	readFile(filename);
+
+    // Append to the file
+	appendToFile(filename, "\nThis is an appended line.");
+
+    // Read from the file again to see the appended content
+	readFile(filename);
+
+	getch(); // To hold the output screen
+
+}
+	
