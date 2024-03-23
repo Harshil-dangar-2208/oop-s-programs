@@ -1,0 +1,29 @@
+//Put() and inserting operator
+//C++ program that for how to use both the insertion operator (<<) and the put() function to output text in a test mode.
+#include <iostream.h>
+#include <string.h>
+#include<conio.h>
+
+void main()
+{
+	clrscr();
+	int integer = 42;
+	float floatingPoint = 3.14f;
+	char character = 'A';
+	char* text = "Hello, World!";
+
+     // Using the insertion operator (<<) to output various types of data
+	cout << "Integer: " << integer << endl;
+	cout << "Floating-point number: " << floatingPoint << endl;
+	cout << "Character: " << character << endl;
+	cout << "String: " << text << endl;
+
+     // Using the put() function to output a single character
+	cout << "Using put() to output a single character: ";
+	cout.put(character);
+	cout << endl;
+
+	getch();
+ }
+
+ //Insert up
