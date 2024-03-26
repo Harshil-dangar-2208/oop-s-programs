@@ -1,0 +1,31 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+class student
+{
+	int rno;
+	char name[30];
+	double course_fee;
+
+	public:
+		student(int,char[],double);
+		void display();
+};
+student::student(int no,char n[],double f)
+{
+	rno=no;
+	strcpy(name,n);
+	course_fee=f;
+}
+void student::display()
+{
+	cout<<endl<<rno<<"\t"<<name<<"\t"<<course_fee<<endl;
+}
+int main()
+{
+	clrscr();
+	student s(22,"harshil",2208);
+	s.display();
+	getch();
+	return 0;
+}
