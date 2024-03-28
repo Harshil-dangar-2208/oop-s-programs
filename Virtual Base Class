@@ -1,0 +1,37 @@
+//vartual bass class
+
+#include <iostream.h>
+#include<conio.h>
+
+
+class A
+{
+	public:
+	A() // Constructor
+	{
+		cout << "Constructor A\n";
+	}
+};
+
+	class B: public virtual A
+	{
+
+	};
+
+	class C: public virtual A
+	{
+
+	};
+
+	class D: public B, public C
+	{
+
+	};
+
+void main()
+{
+	clrscr();
+	D object; // Object creation of class D.
+
+	getch();
+}
