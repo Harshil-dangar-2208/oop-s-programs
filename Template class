@@ -2,9 +2,9 @@
 #include <iostream.h>
 #include <conio.h>
 
-template <typename T>
-class MyClass 
-{
+
+template <class T>
+class MyClass {
 private:
     T data; // Data member of type T
 
@@ -13,36 +13,32 @@ public:
     MyClass(T value) : data(value) {}
 
     // Method to set the value of data
-    void setData(T value) 
-{
-        data = value;  
-}
-
+    void setData(T value) {
+	data = value;
+    }
 
     // Method to get the value of data
-    T getData() const 
-{
-        return data;
-    
-}
+    T getData() const {
+	return data;
+    }
 
     // Method to print the value of data
-    void printData() const 
-{
-        cout << "Data: " << data <<endl;
-    
-}
+    void printData() const {
+	cout << "Data: " << data <<endl;
+    }
 };
-void main()
- {
-    clrscr();
-    MyClass intInstance(10);
+
+void main() {
+
+	clrscr();
+    MyClass<int> intInstance(10);
     intInstance.printData();
-    
-    MyClass doubleInstance(20.5);
+
+    MyClass<double> doubleInstance(20.5);
     doubleInstance.printData();
-    MyClass stringInstance("Hello, World!");
+    char stringdata[]="Hello,World!";
+    MyClass<char*> stringInstance(stringdata);
     stringInstance.printData();
 
-    getch();
+	getch();
 }
