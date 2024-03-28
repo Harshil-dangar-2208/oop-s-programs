@@ -1,0 +1,44 @@
+//copy constructor
+#include <iostream.h>
+#include<conio.h>
+
+// declare a class
+class Car {
+  private:
+    double length;
+    double height;
+
+  public:
+
+    // initialize variables with parameterized constructor
+    Car(double len, double hgt) {
+      length = len;
+      height = hgt;
+    }
+
+    // copy constructor with a car object as parameter
+    // copies data of the obj parameter
+    Car(Car &obj) {
+      length = obj.length;
+      height = obj.height;
+    }
+
+    double calculateArea() {
+      return length * height;
+    }
+};
+void main() {
+clrscr();
+  // create an object of Car1 class
+  Car car1(10.5, 8.6);
+
+  // copy contents of car1 to car2
+  Car car2 = car1;
+
+  // print areas of car1 and car2
+  cout << "Area of Car 1: " << car1.calculateArea() << endl;
+  cout << "Area of Car 2: " << car2.calculateArea();
+
+
+  getch();
+}
